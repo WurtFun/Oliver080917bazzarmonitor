@@ -1,6 +1,6 @@
 // Skyblock Bazaar Monitor - Frontend Application
 
-const API_BASE = '';
+const API_BASE = 'api.sbhypixel.net';
 
 // Config
 const ITEMS_PER_PAGE = 50; // 每页显示数量
