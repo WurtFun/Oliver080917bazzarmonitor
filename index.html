@@ -1794,7 +1794,7 @@ async function checkStatus() {
 
     if (data.success && data.data.hasApiKey) {
       elements.statusText.className = 'status status-success';
-      elements.statusText.textContent = '';
+      elements.statusText.textContent = '就绪';
     } else {
       elements.statusText.className = 'status status-error';
       elements.statusText.textContent = '远程服务器配置异常';
