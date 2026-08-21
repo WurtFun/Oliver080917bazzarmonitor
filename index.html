@@ -1222,23 +1222,23 @@ main {
         <ul id="categoryList">
           <li class="category-item active" data-category="all"><span class="category-label">全部</span></li>
           <li class="category-item" data-category="farming">
-            <span class="category-label"><span class="category-icon"></span> Farming</span>
+            <span class="category-label"><span class="category-icon"></span>Farming</span>
             <ul class="subcategory-list" data-parent="farming" style="display: none;"></ul>
           </li>
           <li class="category-item" data-category="mining">
-            <span class="category-label"><span class="category-icon"></span> Mining</span>
+            <span class="category-label"><span class="category-icon"></span>Mining</span>
             <ul class="subcategory-list" data-parent="mining" style="display: none;"></ul>
           </li>
           <li class="category-item" data-category="combat">
-            <span class="category-label"><span class="category-icon"></span> Combat</span>
+            <span class="category-label"><span class="category-icon"></span>Combat</span>
             <ul class="subcategory-list" data-parent="combat" style="display: none;"></ul>
           </li>
           <li class="category-item" data-category="woods_fishes">
-            <span class="category-label"><span class="category-icon"></span> Woods & Fishes</span>
+            <span class="category-label"><span class="category-icon"></span>Woods & Fishes</span>
             <ul class="subcategory-list" data-parent="woods_fishes" style="display: none;"></ul>
           </li>
           <li class="category-item" data-category="oddities">
-            <span class="category-label"><span class="category-icon"></span> Oddities</span>
+            <span class="category-label"><span class="category-icon"></span>Oddities</span>
             <ul class="subcategory-list" data-parent="oddities" style="display: none;"></ul>
           </li>
         </ul>
@@ -1341,7 +1341,7 @@ main {
   </main>
 
   <nav class="mobile-tabbar" id="mobileTabbar">
-    <button class="tab-btn active" data-tab="products">🛒 商品</button>
+    <button class="tab-btn active" data-tab="products">商品</button>
     <button class="tab-btn" data-tab="filters">筛选</button>
     <button class="tab-btn" data-tab="flips">倒卖</button>
   </nav>
@@ -1359,7 +1359,9 @@ main {
     </div>
   </div>
   <script>
-    const API_BASE = '';
+    // Skyblock Bazaar Monitor - Frontend Application
+
+const API_BASE = (typeof window !== 'undefined' && window.API_BASE) || '';
 
 // Config
 const ITEMS_PER_PAGE = 50; // 每页显示数量
@@ -1793,10 +1795,10 @@ async function checkStatus() {
 
     if (data.success && data.data.hasApiKey) {
       elements.statusText.className = 'status status-success';
-      elements.statusText.textContent = '服务器已连接';
+      elements.statusText.textContent = '';
     } else {
       elements.statusText.className = 'status status-error';
-      elements.statusText.textContent = '远程服务器配置错误';
+      elements.statusText.textContent = '远程服务器配置异常';
     }
   } catch (error) {
     elements.statusText.className = 'status status-error';
@@ -2166,7 +2168,7 @@ function renderProductDetail(product) {
     npcInfo.style.display = 'flex';
     document.getElementById('detailNpcPrice').textContent = formatPrice(product.npcBuyPrice) + `（${product.npcSource}）`;
     if (product.buyPrice && product.npcBuyPrice < product.buyPrice) {
-      npcHint.textContent = '⚡ 比 bazaar 买入价低，可从 NPC 进货';
+      npcHint.textContent = '比 bazaar 买入价低，可从 NPC 进货';
       npcHint.className = 'hint cheap';
     } else {
       npcHint.textContent = '';
