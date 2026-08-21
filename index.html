@@ -1181,18 +1181,18 @@ main {
 <body>
   <header>
     <div class="header-content">
-      <h1>🎮 Bazzar实时查看</h1>
+      <h1>Oliver080917 bazzar monitor</h1>
       <div class="header-actions">
         <button id="refreshBtn" class="btn btn-primary">
-          <span class="btn-icon">🔄</span> 刷新
+          <span class="btn-icon"></span>刷新
         </button>
         <button id="exportBtn" class="btn btn-secondary">
-          <span class="btn-icon">📥</span> 导出
+          <span class="btn-icon"></span>导出
         </button>
       </div>
     </div>
     <div class="status-bar">
-      <span id="statusText" class="status status-error">⚠️ API 密钥未配置</span>
+      <span id="statusText" class="status status-error">等待服务器响应</span>
       <span id="lastUpdated" class="last-updated"></span>
     </div>
   </header>
@@ -1200,8 +1200,8 @@ main {
   <main data-tab="products" data-view="products">
     <aside class="sidebar">
       <div class="sidebar-tabs">
-        <button class="sidebar-tab active" data-sidetab="categories">📦 分类</button>
-        <button class="sidebar-tab" data-sidetab="flips">💰 倒卖</button>
+        <button class="sidebar-tab active" data-sidetab="categories">分类</button>
+        <button class="sidebar-tab" data-sidetab="flips">倒卖</button>
       </div>
 
       <div class="sidebar-pane active" data-pane="categories">
@@ -1213,39 +1213,39 @@ main {
         <h3>筛选</h3>
         <label class="filter-option">
           <input type="checkbox" id="showFavoritesOnly" />
-          <span>⭐ 仅显示收藏</span>
+          <span>仅显示收藏</span>
         </label>
       </div>
 
       <div class="categories">
-        <h3>📦 分类</h3>
+        <h3>分类</h3>
         <ul id="categoryList">
           <li class="category-item active" data-category="all"><span class="category-label">全部</span></li>
           <li class="category-item" data-category="farming">
-            <span class="category-label"><span class="category-icon">🌾</span> Farming</span>
+            <span class="category-label"><span class="category-icon"></span> Farming</span>
             <ul class="subcategory-list" data-parent="farming" style="display: none;"></ul>
           </li>
           <li class="category-item" data-category="mining">
-            <span class="category-label"><span class="category-icon">⛏️</span> Mining</span>
+            <span class="category-label"><span class="category-icon"></span> Mining</span>
             <ul class="subcategory-list" data-parent="mining" style="display: none;"></ul>
           </li>
           <li class="category-item" data-category="combat">
-            <span class="category-label"><span class="category-icon">⚔️</span> Combat</span>
+            <span class="category-label"><span class="category-icon"></span> Combat</span>
             <ul class="subcategory-list" data-parent="combat" style="display: none;"></ul>
           </li>
           <li class="category-item" data-category="woods_fishes">
-            <span class="category-label"><span class="category-icon">🌲</span> Woods & Fishes</span>
+            <span class="category-label"><span class="category-icon"></span> Woods & Fishes</span>
             <ul class="subcategory-list" data-parent="woods_fishes" style="display: none;"></ul>
           </li>
           <li class="category-item" data-category="oddities">
-            <span class="category-label"><span class="category-icon">🔮</span> Oddities</span>
+            <span class="category-label"><span class="category-icon"></span> Oddities</span>
             <ul class="subcategory-list" data-parent="oddities" style="display: none;"></ul>
           </li>
         </ul>
       </div>
 
       <div class="favorites-list">
-        <h3>⭐ 收藏夹</h3>
+        <h3>收藏夹</h3>
         <ul id="favoritesList"></ul>
       </div>
       </div>
@@ -1279,13 +1279,13 @@ main {
         </div>
         <div class="npc-flips-pane active">
           <div class="leaderboard">
-            <h3>💰 倒卖排行榜 <span id="flipsCount" class="flips-count"></span></h3>
+            <h3>倒卖排行榜<span id="flipsCount" class="flips-count"></span></h3>
             <ol id="flipLeaderboard"></ol>
           </div>
         </div>
         <div class="craft-flips-pane">
           <div class="leaderboard">
-            <h3>🛠️ 合成倒卖 <span id="craftFlipsCount" class="flips-count"></span></h3>
+            <h3>合成<span id="craftFlipsCount" class="flips-count"></span></h3>
             <ol id="craftFlipLeaderboard"></ol>
           </div>
         </div>
@@ -1327,7 +1327,7 @@ main {
         </div>
 
         <div class="npc-info" id="npcInfo">
-          <span class="label">🏪 NPC 购买价</span>
+          <span class="label">NPC 购买价</span>
           <span class="value" id="detailNpcPrice">-</span>
           <span class="hint" id="npcHint"></span>
         </div>
@@ -1342,8 +1342,8 @@ main {
 
   <nav class="mobile-tabbar" id="mobileTabbar">
     <button class="tab-btn active" data-tab="products">🛒 商品</button>
-    <button class="tab-btn" data-tab="filters">🔍 筛选</button>
-    <button class="tab-btn" data-tab="flips">💰 倒卖</button>
+    <button class="tab-btn" data-tab="filters">筛选</button>
+    <button class="tab-btn" data-tab="flips">倒卖</button>
   </nav>
 
   <!-- Export Modal -->
@@ -1359,7 +1359,7 @@ main {
     </div>
   </div>
   <script>
-    const API_BASE = 'api.sbhypixel.net';
+    const API_BASE = '';
 
 // Config
 const ITEMS_PER_PAGE = 50; // 每页显示数量
@@ -1451,11 +1451,11 @@ const CATEGORY_MAP = {
 
 // 主分类图标（移动端分类栏用，与侧边栏一致）
 const CATEGORY_ICONS = {
-  farming: '🌾',
-  mining: '⛏️',
-  combat: '⚔️',
-  woods_fishes: '🌲',
-  oddities: '🔮'
+  farming: '',
+  mining: '',
+  combat: '',
+  woods_fishes: '',
+  oddities: ''
 };
 
 // DOM Elements
@@ -1793,14 +1793,14 @@ async function checkStatus() {
 
     if (data.success && data.data.hasApiKey) {
       elements.statusText.className = 'status status-success';
-      elements.statusText.textContent = '✅ API 已连接';
+      elements.statusText.textContent = '服务器已连接';
     } else {
       elements.statusText.className = 'status status-error';
-      elements.statusText.textContent = '⚠️ API 密钥未配置';
+      elements.statusText.textContent = '远程服务器配置错误';
     }
   } catch (error) {
     elements.statusText.className = 'status status-error';
-    elements.statusText.textContent = '❌ 连接失败';
+    elements.statusText.textContent = '无法连接至服务器';
   }
 }
 
@@ -1894,11 +1894,11 @@ function renderProducts() {
         </div>
       </div>
       <div class="volume">
-        📊 ${formatNumber(product.buyVolume)} / ${formatNumber(product.sellVolume)}
+        ${formatNumber(product.buyVolume)} / ${formatNumber(product.sellVolume)}
       </div>
       ${product.npcBuyPrice != null ? `
         <div class="npc-tag" title="NPC 购买价（${product.npcSource}）">
-          🏪 NPC ${formatPrice(product.npcBuyPrice)}
+          NPC ${formatPrice(product.npcBuyPrice)}
           ${product.buyPrice && product.npcBuyPrice < product.buyPrice ? '<span class="npc-cheap">更便宜</span>' : ''}
         </div>` : ''}
     </div>
@@ -2495,6 +2495,17 @@ function startAutoRefresh() {
     }
   }, 300000); // 每5分钟刷新一次
 }
+  </script>
+  <script>
+    // 后端 API 地址配置（前后端分离部署用）
+// 默认空字符串 = 同源：前端和 API 在同一个域名/端口（本地 npm start 或前后端都在朋友服务器上）。
+//
+// 分离部署时改成朋友服务器的地址，例如：
+//   window.API_BASE = 'https://api.你的域名.com';
+//
+// ⚠️ 重要：如果前端放在 https 的 GitHub Pages 上，后端必须是 https，
+//    否则浏览器会拦截「混合内容」请求（https 页面请求 http 接口）。
+window.API_BASE = 'https://api.sbhypixel.net';
   </script>
 </body>
 </html>
